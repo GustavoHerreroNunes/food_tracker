@@ -1,0 +1,113 @@
+Maçã,0.5
+Laranja,0.4
+Banana,0.9
+Abacaxi,0.5
+Óleo de coco,9
+Óleo de oliva,9
+Manteiga,7
+Açúcar branco,4
+Mel,3.4
+Arroz branco cozido,1.1
+Macarrão cozido,1.4
+Batata cozida,0.7
+Cenoura crua,0.4
+Brócolis cozido,0.3
+Couve-flor crua,0.3
+Espinafre cozido,0.2
+Alface,0.1
+Pepino,0.1
+Tomate,0.2
+Abobrinha,0.2
+Maçã,0.5
+Banana,0.9
+Laranja,0.4
+Morango,0.3
+Abacate,1.6
+Frango cozido sem pele,1.2
+Carne bovina magra cozida,2.4
+Peixe (salmão),2.1
+Ovo cozido,1.6
+Iogurte natural,0.6
+Queijo cheddar,4
+Leite integral,0.6
+Leite desnatado,0.4
+Feijão cozido,1.2
+Lentilhas cozidas,1.1
+Grão-de-bico cozido,1.6
+Amêndoas,5.9
+Abacaxi,0.5
+Melancia,0.3
+Melão,0.3
+Manga,0.6
+Pêssego,0.4
+Kiwi,0.6
+Uva,0.7
+Pera,0.5
+Pimentão,0.2
+Cebola,0.4
+Alho,1.5
+Aipo,0.2
+Beterraba cozida,0.4
+Rabanete,0.2
+Berinjela,0.2
+Cogumelo,0.3
+Salsa,0.3
+Salmão defumado,2.2
+Atum enlatado,1.3
+Sardinha enlatada,2.4
+Bacalhau,1.8
+Tofu,0.8
+Quinoa cozida,1.5
+Cuscuz marroquino cozido,1.2
+Aveia cozida,0.6
+Pão integral,2.5
+Pão de forma,2.7
+Pão de centeio,2.6
+Pão de milho,2.8
+Pão de batata,2.9
+Arroz integral cozido,1.1
+Arroz selvagem cozido,1
+Milho cozido,1.5
+Feijão preto cozido,1.2
+Feijão vermelho cozido,1.1
+Feijão branco cozido,1.1
+Amendoim,5.8
+Castanha de caju,5.7
+Nozes,6.8
+Avelãs,6.1
+Pistache,5.7
+Chocolate ao leite,5.7
+Chocolate amargo,5.6
+Chocolate branco,5.6
+Sorvete de baunilha,2
+Sorvete de chocolate,2.5
+Sorvete de morango,2.3
+Flocos de milho (cereal),3.6
+Granola,4.1
+Pipoca estourada,3.4
+Pão de alho,4.6
+Biscoito de água e sal,4.4
+Biscoito de polvilho,4.7
+Biscoito cream cracker,4.5
+Biscoito maisena,4.8
+Biscoito recheado,4.6
+Pão de queijo,2.8
+Lasanha,1.2
+Macarrão instantâneo (cozido),1
+Nhoque,1.4
+Torrada,3.8
+Salgadinho de milho (snack),5.6
+Salgadinho de batata (snack),5.3
+Tortilha de milho,2.6
+Tortilha de trigo,3.4
+Pão de hambúrguer,3.4
+Pão de hot dog,3.5
+Pão francês,2.7
+Pão de forma integral,2.5
+Pão de centeio integral,2.6
+Pão de aveia,2.5
+Pão pita,2.2
+Pão sírio,2.4
+Pão naan,2.5
+Pão de alho,3.7
+Pão de alho com queijo,4.5
