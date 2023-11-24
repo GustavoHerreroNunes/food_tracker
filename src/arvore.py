@@ -1,3 +1,5 @@
+from collections import defaultdict
+
 #Definição da classe Arvore Binaria com os alimentos
 
 class NoArvore:
@@ -128,27 +130,29 @@ class ArvoreBinaria:
         else:
             return None
 
-    def buscar_alimento(no_atual, alimento):
-    if no_atual is None or no_atual.alimento == alimento:
-        return no_atual
-    if alimento < no_atual.alimento:
-        return buscar_alimento(no_atual.esquerda, alimento)
-    return buscar_alimento(no_atual.direita, alimento)
+    def calcular_calorias_por_dia(alimentos_consumidos):
+        calorias_por_dia = defaultdict(int)
 
-    def salvar_arvore_txt(no_atual, arquivo):
-    if no_atual is not None:
-        if no_atual.direita is not None:
-            salvar_arvore_txt(no_atual.direita, arquivo)
-        arquivo.write(f"{no_atual.alimento},{no_atual.calorias_por_grama}\n")
-        if no_atual.esquerda is not None:
-            salvar_arvore_txt(no_atual.esquerda, arquivo)
+        for data, consumos in alimentos_consumidos.items():
+            for consumo in consumos:
+                calorias_por_dia[data] += consumo['calorias_consumidas']
 
-    def salvar_arvore(nome_arquivo, arvore):
-        with open(nome_arquivo, 'w') as arquivo_txt:
-            if arvore.raiz is not None:
-                salvar_arvore_txt(arvore.raiz, arquivo_txt)
+        return calorias_por_dia
 
-    def ler_arvore_txt(nome_arquivo):
+def salvar_arvore_txt(no_atual, arquivo):
+        if no_atual is not None:
+            if no_atual.direita is not None:
+                salvar_arvore_txt(no_atual.direita, arquivo)
+            arquivo.write(f"{no_atual.alimento},{no_atual.calorias_por_grama}\n")
+            if no_atual.esquerda is not None:
+                salvar_arvore_txt(no_atual.esquerda, arquivo)
+
+def salvar_arvore(nome_arquivo, arvore):
+    with open(nome_arquivo, 'w') as arquivo_txt:
+        if arvore.raiz is not None:
+            salvar_arvore_txt(arvore.raiz, arquivo_txt)
+
+def ler_arvore_txt(nome_arquivo):
     arvore = ArvoreBinaria()
     with open(nome_arquivo, 'r') as arquivo:
         linhas = arquivo.readlines()
@@ -159,43 +163,11 @@ class ArvoreBinaria:
             arvore.raiz = adicionar_no(arvore.raiz, alimento, calorias_por_grama)
     return arvore
 
-    def adicionar_no(raiz, alimento, calorias_por_grama):
-        if raiz is None:
-            return NoArvore(alimento, calorias_por_grama)
-        elif alimento < raiz.alimento:
-            raiz.esquerda = adicionar_no(raiz.esquerda, alimento, calorias_por_grama)
-        elif alimento > raiz.alimento:
-            raiz.direita = adicionar_no(raiz.direita, alimento, calorias_por_grama)
-        return raiz
-
-    def adicionar_alimento_consumido(arvore, data_consumo, alimento, quantidade_consumida):
-    resultado_busca = buscar_alimento(arvore.raiz, alimento)
-    
-    if resultado_busca:
-        # Aqui você pode fazer o cálculo das calorias com base na quantidade consumida
-        calorias_consumidas = resultado_busca.calorias_por_grama * quantidade_consumida
-        
-        if data_consumo not in alimentos_consumidos:
-            alimentos_consumidos[data_consumo] = []
-
-        alimentos_consumidos[data_consumo].append({
-            'alimento': alimento,
-            'quantidade_consumida': quantidade_consumida,
-            'calorias_consumidas': calorias_consumidas
-        })
-        print(f"Alimento '{alimento}' adicionado na data {data_consumo}.")
-        return calorias_consumidas
-    else:
-        print(f"Alimento '{alimento}' não encontrado na lista de alimentos.")
-        return 0
-
-    def calcular_calorias_por_dia(alimentos_consumidos):
-        calorias_por_dia = defaultdict(int)
-
-        for data, consumos in alimentos_consumidos.items():
-            for consumo in consumos:
-                calorias_por_dia[data] += consumo['calorias_consumidas']
-
-        return calorias_por_dia
-
-
+def adicionar_no(raiz, alimento, calorias_por_grama):
+    if raiz is None:
+        return NoArvore(alimento, calorias_por_grama)
+    elif alimento < raiz.alimento:
+        raiz.esquerda = adicionar_no(raiz.esquerda, alimento, calorias_por_grama)
+    elif alimento > raiz.alimento:
+        raiz.direita = adicionar_no(raiz.direita, alimento, calorias_por_grama)
+    return raiz

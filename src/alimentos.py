@@ -1,3 +1,5 @@
+from collections import defaultdict
+
 class RegistroAlimentosConsumidos:
     def __init__(self):
         self.registro = defaultdict(list)
