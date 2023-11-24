@@ -1,17 +1,25 @@
 import bcrypt
-from user import Usuario
+import uuid
+from user import Usuario, ArvoreUsuarios
 
 class SistemaAutenticacao:
     def __init__(self):
-        self.usuarios = []
+        self.arvore_usuarios = ArvoreUsuarios()
+        self.sessoes = {}
 
     def cadastrar_usuario(self, username, senha):
         novo_usuario = Usuario(username, senha)
-        self.usuarios.append(novo_usuario)
+        self.arvore_usuarios.inserir_usuario(novo_usuario)
 
     def autenticar_usuario(self, username, senha):
-        for usuario in self.usuarios:
-            # Verifica se a senha fornecida corresponde ao hash armazenado
-            if usuario.username == username and bcrypt.checkpw(senha.encode('utf-8'), usuario.senha_hash):
-                return True
-        return False
+        usuario = self.arvore_usuarios.buscar_usuario(username)
+        if usuario and bcrypt.checkpw(senha.encode('utf-8'), usuario.senha_hash):
+            # Gerar um ID de sessão único
+            id_sessao = str(uuid.uuid4())
+            # Associar o ID de sessão ao usuário autenticado
+            self.sessoes[id_sessao] = usuario
+            return id_sessao
+        return None
+
+    def obter_usuario_por_sessao(self, id_sessao):
+        return self.sessoes.get(id_sessao)
