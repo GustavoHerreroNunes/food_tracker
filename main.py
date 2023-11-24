@@ -11,7 +11,17 @@ if __name__ == "__main__":
     alimentos = ler_arvore_txt("src/TesteArvore.txt")
     registro = RegistroAlimentosConsumidos()
 
+    for i in range(1000):
+        print(i)
+        username = f"usuario{i}"
+        senha = "senha123"
+        sistema.cadastrar_usuario(username, senha)
+
+    print("\n\33[1mBem-vindo ao sistema!\33[0m")
+
     while True:
+        print(f"\nExistem \33[1m{sistema.arvore_usuarios.numero_de_usuarios()}\33[0m usuários cadastrados no sistema.")
+    
         print("\n1 - Cadastrar usuário" + 
               "\n2 - login do usuário" + 
               "\n0 - Sair")
@@ -22,6 +32,7 @@ if __name__ == "__main__":
             senha = input("Digite a senha: ")
             sistema.cadastrar_usuario(username, senha)
             print("\33[32mUsuário cadastrado com sucesso!\33[0m")
+            
 
         elif escolha == "2":
             username_input = input("Digite o nome de usuário: ")
