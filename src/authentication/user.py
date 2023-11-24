@@ -62,6 +62,14 @@ class ArvoreUsuarios:
         if username < node.username:
             return self._buscar(node.left, username)
         return self._buscar(node.right, username)
+    
+    def numero_de_usuarios(self):
+        return self._numero_de_usuarios(self.root)
+    
+    def _numero_de_usuarios(self, node):
+        if not node:
+            return 0
+        return 1 + self._numero_de_usuarios(node.left) + self._numero_de_usuarios(node.right)
 
     def _get_altura(self, node):
         if not node:
