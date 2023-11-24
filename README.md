@@ -2,7 +2,7 @@
 
 <!--Tecnologias Utilizadas e suas versões-->
 
-[![Python Version][python-badge]][java-doc] 
+[![Python Version][python-badge]][python-doc] [![Bcrypt Version][bcrypt-badge]][bcrypt-download] [![Uuid Version][uuid-badge]][uuid-download]
 
 
 > Status: :thumbsup: Finished
@@ -93,9 +93,9 @@ A senha de todos os usuários é passa por um processo de hash e salting, para g
 
 ### Pré-requisitos
 
-- [Python][java-download]
-- [Uuid][java-download]
-- [Bcrypt][java-download]
+- [Python][python-download]
+- [Uuid][uuid-download]
+- [Bcrypt][bcrypt-download]
 
 ### Iniciando o projeto 
 > Os comandos listados a seguir foram feitos pelo terminal do **Windows**
@@ -147,13 +147,16 @@ Se você tem alguma ideia, sugestão, ou viu algum erro, você pode [abrir uma i
 
 <!-- Badges -->
 [python-badge]: https://img.shields.io/badge/Python-3.11.4-blue?style=for-the-badge&logo=python
+[uuid-badge]: https://img.shields.io/badge/Uuid-1.30-orange?style=for-the-badge&logo=python
+[bcrypt-badge]: https://img.shields.io/badge/Bcrypt-4.0.1-cyan?style=for-the-badge&logo=python
 
 <!-- Documentations -->
-[java-doc]: https://docs.oracle.com/en/java/javase/17/
+[python-doc]: https://docs.python.org/3.11/
 
 <!-- Downloads -->
-[java-download]: https://www.java.com/pt-BR/download/ie_manual.jsp?locale=pt_BR
-
+[python-download]: https://www.python.org/downloads/
+[uuid-download]: https://pypi.org/project/uuid/
+[bcrypt-download]: https://pypi.org/project/bcrypt/
 
 <!-- Others -->
-[issues]: https://github.com/GustavoHerreroNunes/fodd_tracker/issues
+[issues]: https://github.com/GustavoHerreroNunes/food_tracker/issues
